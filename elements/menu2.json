@@ -1,0 +1,56 @@
+{
+    "blocks": [
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "Please select what type of 1-month subscriber you would like to create:"
+            },
+            "accessory": {
+                "type": "radio_buttons",
+                "options": [
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "text": "1-Month subscriber - Normal sub",
+                            "emoji": true
+                        },
+                        "value": "MENU2_ITEM1"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "text": "1-Month subscriber (Auto-renew off, 30-7 days expire)",
+                            "emoji": true
+                        },
+                        "value": "MENU2_ITEM2"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "text": "1-Month subscriber (Auto-renew off, 7-0 days expire)",
+                            "emoji": true
+                        },
+                        "value": "MENU2_ITEM3"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "text": "1-Month subscriber (Auto-renew off, 30-0 days expire, 1-month pre-churn promo code used)",
+                            "emoji": true
+                        },
+                        "value": "MENU2_ITEM4"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "text": "1-Month churn",
+                            "emoji": true
+                        },
+                        "value": "MENU2_ITEM5"
+                    }
+                ]
+            }
+        }
+    ]
+}

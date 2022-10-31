@@ -1,0 +1,48 @@
+{
+    "blocks": [
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "Please select what type of 1-year subscriber you would like to create:"
+            },
+            "accessory": {
+                "type": "radio_buttons",
+                "options": [
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "text": "1-Year subscriber - Normal sub",
+                            "emoji": true
+                        },
+                        "value": "MENU3_ITEM1"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "text": "1-Year subscriber (Auto-renew off, before expire 31 days)",
+                            "emoji": true
+                        },
+                        "value": "MENU3_ITEM2"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "text": "1-Year subscriber (Auto-renew off, 30-0 days before expiry, 1-year promo. code has been used)",
+                            "emoji": true
+                        },
+                        "value": "MENU3_ITEM3"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "text": "1-Year subscriber (Auto-renew off, 30-0 days before expiry)",
+                            "emoji": true
+                        },
+                        "value": "MENU3_ITEM4"
+                    }
+                ]
+            }
+        }
+    ]
+}

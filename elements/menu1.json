@@ -1,0 +1,48 @@
+{
+	"blocks": [
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "What account type would you like to create?"
+			},
+			"accessory": {
+				"type": "radio_buttons",
+				"options": [
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "New registered user",
+							"emoji": true
+						},
+						"value": "MENU1_ITEM1"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "1-Month subscriber",
+							"emoji": true
+						},
+						"value": "MENU1_ITEM2"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "1-Year subscriber",
+							"emoji": true
+						},
+						"value": "MENU1_ITEM3"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "2-Year subscriber",
+							"emoji": true
+						},
+						"value": "MENU1_ITEM4"
+					}
+				]
+			}
+		}
+	]
+}
