@@ -8,6 +8,7 @@ const interactions = require('./interactions')
 const slashCommand = require('./slashCommand')
 const pipeline_hook = require('./pipeline_hook')
 
+app.use(express.static('public'));
 interactions.listenForInteractions(app)
 slashCommand.listenForCommands(app)
 pipeline_hook.listenForBuilds(app)
