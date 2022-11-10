@@ -14,4 +14,8 @@ module.exports = Object.freeze({
     MENU3_ITEM2: 'MENU3_ITEM2',
     MENU3_ITEM3: "MENU3_ITEM3",
     MENU3_ITEM4: "MENU3_ITEM4",
+    MENU3_ITEM5: "MENU3_ITEM5",
+
+    MENU4_ITEM1: "MENU4_ITEM1",
+    MENU4_ITEM2: "MENU4_ITEM2",
 });

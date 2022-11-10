@@ -13,7 +13,6 @@ function respond(payload, respond) {
     globals.last_access_user = slack_userid
     switch (selectedOptionValue) {
         case menu_items_context.MENU1_ITEM1:
-        case menu_items_context.MENU1_ITEM4:
         case menu_items_context.MENU2_ITEM1:
         case menu_items_context.MENU2_ITEM2:
         case menu_items_context.MENU2_ITEM3:
@@ -23,6 +22,9 @@ function respond(payload, respond) {
         case menu_items_context.MENU3_ITEM2:
         case menu_items_context.MENU3_ITEM3:
         case menu_items_context.MENU3_ITEM4:
+        case menu_items_context.MENU3_ITEM5:
+        case menu_items_context.MENU4_ITEM1:
+        case menu_items_context.MENU4_ITEM2:
             respondToMenuFinalItem(selectedOptionValue, selectedOptionText, slack_userid, slack_channelid, respond)
             break
         case menu_items_context.MENU1_ITEM2:
@@ -30,6 +32,9 @@ function respond(payload, respond) {
             break
         case menu_items_context.MENU1_ITEM3:
             respondToMenu3(selectedOptionValue, selectedOptionText, respond)
+            break
+        case menu_items_context.MENU1_ITEM4:
+            respondToMenu4(selectedOptionValue, selectedOptionText, respond)
             break
     }
 
@@ -68,6 +73,12 @@ function respondToMenu3(selectedOption, selectedOptionText, respond) {
     const menu3 = require('./elements/menu3.json')
     console.log("arrive3")
     respond(menu3)
+}
+
+function respondToMenu4(selectedOption, selectedOptionText, respond) {
+    const menu4 = require('./elements/menu4.json')
+    console.log("arrive4")
+    respond(menu4)
 }
 
 module.exports.respond = respond

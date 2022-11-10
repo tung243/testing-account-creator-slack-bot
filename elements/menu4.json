@@ -1,0 +1,32 @@
+{
+    "blocks": [
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "Please select what type of 2-year subscriber you would like to create:"
+            },
+            "accessory": {
+                "type": "radio_buttons",
+                "options": [
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "text": "2-Year subscriber - Normal sub",
+                            "emoji": true
+                        },
+                        "value": "MENU4_ITEM1"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "text": "2-Year churn",
+                            "emoji": true
+                        },
+                        "value": "MENU4_ITEM2"
+                    }
+                ]
+            }
+        }
+    ]
+}

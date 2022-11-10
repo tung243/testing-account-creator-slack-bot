@@ -40,6 +40,14 @@
                             "emoji": true
                         },
                         "value": "MENU3_ITEM4"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "text": "1-Year churn",
+                            "emoji": true
+                        },
+                        "value": "MENU3_ITEM5"
                     }
                 ]
             }
