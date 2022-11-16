@@ -12,13 +12,13 @@ module.exports.triggerPipelineBuild = function triggerPipelineBuild(menuSelected
 
 function sendRequest(menuSelectedItem, menuSelectedItemDesc, slackUserID, slackChannelID) {
     const data = JSON.stringify({
-        'ref': 'master',
+        'ref': '9-test-pipleline-variables',
         'token': process.env.PIPELINE_TOKEN,
-        'CREATE_ACCOUNT': gen.generateRandomACC(),
-        'MENU_SELECTED_ITEM': menuSelectedItem,
-        'MENU_SELECTED_ITEM_DESC': menuSelectedItemDesc,
-        'SLACK_USERID': slackUserID,
-        'SLACK_CHANNELID': slackChannelID
+        'variables[CREATE_ACCOUNT]': gen.generateRandomACC(),
+        'variables[MENU_SELECTED_ITEM]': menuSelectedItem,
+        'variables[MENU_SELECTED_ITEM_DESC]': menuSelectedItemDesc,
+        'variables[SLACK_USERID]': slackUserID,
+        'variables[SLACK_CHANNELID]': slackChannelID
     })
 
     const options = {
