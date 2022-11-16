@@ -42,30 +42,33 @@ function sendRequest(menuSelectedItem, menuSelectedItemDesc, slackUserID, slackC
     //     }
     // }
     const options = {
-        url: fullurl,
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Content-Length': data.length
-        }
+        url: fullurl,
+        headers: {}
     }
 
-    const req = https.request(options, res => {
-        // console.log(`status code: ${res.statusCode}`)
+    request(options, function (error, response) {
+        if (error) throw new Error(error);
+        console.log("Submitted pipeline build request");
+        console.log(response.body);
+    });
 
-        res.on('data', d => {
-            console.log("Submitted pipeline build request")
-            // process.stdout.write(d)
-        })
-    })
+    // const req = https.request(options, res => {
+    // console.log(`status code: ${res.statusCode}`)
 
-    req.on('error', error => {
-        console.log("error=" + error)
-        console.error(error)
-    })
-    console.log("Send request data=" + data)
-    req.write(data)
-    req.end()
+    // res.on('data', d => {
+    //     console.log("Submitted pipeline build request")
+    //     // process.stdout.write(d)
+    // })
+    // })
+
+    // req.on('error', error => {
+    //     console.log("error=" + error)
+    //     console.error(error)
+    // })
+    // console.log("Send request data=" + data)
+    // req.write(data)
+    // req.end()
 }
 
 
