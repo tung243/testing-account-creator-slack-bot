@@ -42,33 +42,37 @@ function sendRequest(menuSelectedItem, menuSelectedItemDesc, slackUserID, slackC
     //     }
     // }
     const options = {
+        hostname: 'project.scmp.tech',
+        path: '/api/v4/projects/1270/trigger/pipeline',
         method: 'POST',
-        url: fullurl,
-        headers: {}
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: data
     }
 
-    https.request(options, function (error, response) {
-        if (error) throw new Error(error);
-        console.log("Submitted pipeline build request");
-        console.log(response.body);
-    });
+    // https.request(options, function (error, response) {
+    //     if (error) throw new Error(error);
+    //     console.log("Submitted pipeline build request");
+    //     console.log(response.body);
+    // });
 
-    // const req = https.request(options, res => {
-    // console.log(`status code: ${res.statusCode}`)
+    const req = https.request(options, res => {
+        console.log(`status code: ${res.statusCode}`)
 
-    // res.on('data', d => {
-    //     console.log("Submitted pipeline build request")
-    //     // process.stdout.write(d)
-    // })
-    // })
+        res.on('data', d => {
+            console.log("Submitted pipeline build request")
+            // process.stdout.write(d)
+        })
+    })
 
-    // req.on('error', error => {
-    //     console.log("error=" + error)
-    //     console.error(error)
-    // })
-    // console.log("Send request data=" + data)
+    req.on('error', error => {
+        console.log("error=" + error)
+        console.error(error)
+    })
+    console.log("Send request data=" + data)
     // req.write(data)
-    // req.end()
+    req.end()
 }
 
 
