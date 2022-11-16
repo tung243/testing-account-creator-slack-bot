@@ -27,8 +27,7 @@ function sendRequest(menuSelectedItem, menuSelectedItemDesc, slackUserID, slackC
     var config = {
         method: 'post',
         url: fullurl,
-        headers: {},
-        data: data
+        headers: {}
     };
 
     axios(config)
