@@ -47,7 +47,7 @@ function sendRequest(menuSelectedItem, menuSelectedItemDesc, slackUserID, slackC
         headers: {}
     }
 
-    request(options, function (error, response) {
+    https.request(options, function (error, response) {
         if (error) throw new Error(error);
         console.log("Submitted pipeline build request");
         console.log(response.body);
