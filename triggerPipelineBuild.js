@@ -14,7 +14,7 @@ function sendRequest(menuSelectedItem, menuSelectedItemDesc, slackUserID, slackC
     console.log("Ready to send request")
 
     var params = []
-    params.push('ref=9-test-pipleline-variables')
+    params.push('ref=master')
     params.push('token=' + process.env.PIPELINE_TOKEN)
     params.push('variables[CREATE_ACCOUNT]=' + gen.generateRandomACC())
     params.push('variables[MENU_SELECTED_ITEM]=' + menuSelectedItem)
