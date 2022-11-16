@@ -14,13 +14,30 @@ module.exports.listenForBuilds = function listenForBuilds(app) {
         // console.log('status=' + status)
         // var jsonString = payload.replaceAll('\\', '');
         var response_text = ""
-        if (status == 'success' && !_.isNil(req.body.object_attributes.variables[0])) {
-            var payload = JSON.parse(req.body.object_attributes.variables[0].value)
-            var create_acc = payload.CREATE_ACCOUNT
-            var menuSelectedItem = payload.MENU_SELECTED_ITEM
-            var menuSelectedItem_desc = payload.MENU_SELECTED_ITEM_DESC
-            var slack_userid = payload.SLACK_USERID
-            var slack_channelid = payload.SLACK_CHANNELID
+        if (status == 'success' && !_.isNil(req.body.object_attributes.variables)) {
+            // var return_variables = JSON.parse(req.body.object_attributes.variables)
+            var return_variables = req.body.object_attributes.variables
+            var create_acc = "";
+            var menuSelectedItem = "";
+            var menuSelectedItem_desc = "";
+            var slack_userid = "";
+            var slack_channelid = "";
+            for (var i = 0; i < return_variables.length; i++) {
+                key = return_variables[i].key;
+                value = return_variables[i].value;
+                if (key === keys.CREATE_ACCOUNT) {
+                    create_acc = value;
+                } else if (key === keys.MENU_SELECTED_ITEM) {
+                    menuSelectedItem = value;
+                } else if (key === keys.MENU_SELECTED_ITEM_DESC) {
+                    menuSelectedItem_desc = value;
+                } else if (key === keys.SLACK_USERID) {
+                    slack_userid = value;
+                } else if (key === keys.SLACK_CHANNELID) {
+                    slack_channelid = value;
+                } else { }
+
+            }
             var return_color = "#2EB67D"
             if (detailed_status == 'passed') {
                 response_text = "The testing account is created successfully.\n" +
